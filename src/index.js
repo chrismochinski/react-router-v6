@@ -12,13 +12,14 @@ import {
   Outlet, //end of the pipe - where component physically mounts
   useParams, //ol' friend!
   NavLink, //similar to Link but you can use properties, classes, styles, etc
-  useNavigate, //IMPORTANT use instead of history, apparently??? (also, everything i serialized - only passes stuff as strings)
+  useNavigate, //use INSTEAD OF HISTORY (also, everything is serialized - only passes stuff as strings)
   useLocation,
 } from "react-router-dom";
 
 ReactDOM.render(
   <Router>
     <Routes>
+      <Route path="secretapppage" element={<App />} />
       <Route path="/" element={<Home />} />
       <Route path="/myapps" element={<Navigate replace to="/learn" />} />
       <Route path="/learn" element={<Learn />}>
@@ -77,7 +78,6 @@ function Courses() {
 
       <p>More Test</p>
       <NavLink
-        // className="btn btn-lg"
         style={({ isActive }) => {
           return {
             backgroundColor: isActive ? "pink" : "yellow",
@@ -142,6 +142,16 @@ function Dashboard() {
       >
         Go Back
       </button>
+<br />
+      <button
+      style={{margin: '40px'}}
+        className="btn btn-danger btn-lg btn-block"
+        onClick={() => {
+          navigate("/secretapppage");
+        }}
+      >
+View Imported App page     
+ </button>
     </div>
   );
 }
