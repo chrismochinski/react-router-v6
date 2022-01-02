@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import {
   BrowserRouter as Router,
-  Routes, //new version of Switch
+  Routes, //new versio n of Switch
   Route,
   Navigate, //similar to redirect
   Link, //better than an <a> tag - does not reload entire page
